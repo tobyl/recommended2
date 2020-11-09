@@ -1,0 +1,158 @@
+@import './utils';
+
+.Item {
+  border-left: none;
+  border-right: none;
+  padding: 15px 10px;
+  transition: margin 340ms ease-out, border-color 340ms ease-out, background 340ms ease-out;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  background: #fff;
+  h3,
+  p {
+    margin: 0;
+  }
+  h3 {
+    font-size: 0.9rem;
+    &:hover {
+      cursor: pointer;
+    }
+    em {
+      font-style: normal;
+      color: #777;
+      font-weight: normal;
+    }
+    .ExpandIcon {
+      float: right;
+      display: block;
+      width: 34px;
+      height: 34px;
+      margin-top: 8px;
+      padding: 6px;
+      border: 3px solid $primary-bg-border;
+      border-radius: 18px;
+      transition: transform 340ms ease-out;
+      svg {
+        fill: $primary-border;
+      }
+    }
+    svg {
+      display: inline-block !important;
+    }
+  }
+  .PlainEnglish {
+    color: #777;
+    font-size: 1.1rem;
+    margin: 24px 0 15px 0;
+  }
+  .HelpCopy {
+    display: block;
+    margin: 10px 0;
+  }
+  .Hidden {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 340ms ease-out;
+  }
+  &.Lowest,
+  &.Expanded.Lowest {
+    border-color: $warning-bg-border;
+    background: $warning-bg;
+    h3 {
+      color: $warning-copy;
+    }
+    .PlainEnglish {
+      color: $warning-copy;
+    }
+    .HelpCopy {
+      border-color: $warning-bg-border;
+    }
+  }
+  &.OAB {
+    border-bottom-width: 0 !important;
+    .ExpandIcon {
+      display: none;
+    }
+  }
+  &.Expanded {
+    // padding-top: 20px;
+    // padding-bottom: 20px;
+    // border-top: 1px solid $primary;
+    // border-bottom: 1px solid $primary;
+    border-top: 2px solid #abc2da;
+    border-bottom: 2px solid #abc2da;
+    .ExpandIcon {
+      transform: rotate(180deg);
+    }
+    .Hidden {
+      max-height: 500px;
+    }
+    &.Lowest {
+      // box-shadow: 2px 2px 0px 0 $warning-bg-shadow;
+      small {
+        color: $warning-copy;
+      }
+      label {
+        border: 1px solid #e9cfa2;
+      }
+    }
+    // margin-bottom: 1.75rem;
+    // border: 2px solid #fdf1f1;
+    // box-shadow: 2px 2px 0px 0 $default-bg-shadow;
+    // border-radius: 5px;
+  }
+  &.NotOpen {
+    // opacity: 0.75;
+  }
+}
+
+.Options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 2px;
+  label {
+    background: $default-bg;
+    flex-grow: 1;
+    margin: 0 5px;
+    padding: 8px;
+    border-radius: 4px;
+    span {
+      small {
+        display: block;
+      }
+    }
+    input {
+      float: left;
+      margin-bottom: 5px;
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 1px;
+    }
+    &.Highest {
+
+    }
+    &.Lowest {
+
+    }
+    &.Selected {
+      border-color: $selected-bg-border;
+      background: $selected-bg;
+      box-shadow: 1px 1px 1px 0 #C8D1F1;
+      span {
+        color: $selected-copy;
+      }
+      &.Lowest {
+        background: #e9cfa2;
+        box-shadow: 1px 1px 1px 0 #cfb480;
+        span {
+          color: $warning-copy;
+        }
+      }
+    }
+  }
+}

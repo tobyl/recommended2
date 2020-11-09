@@ -1,0 +1,173 @@
+@import './utils';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #555;
+  padding-bottom: 80px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h2,
+h3,
+h4,
+h5,
+strong {
+  color: $primary;
+  font-weight: 500;
+}
+
+h2 { font-size: 17px }
+h3 { font-size: 16px }
+h4 { font-size: 15px }
+h5 { font-size: 14px }
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin-top: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.lead {
+  font-size: 1.35rem;
+}
+
+.App {
+  padding: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.primary {
+  color: $primary;
+}
+
+.success {
+  color: $success;
+}
+
+.warning {
+  color: $warning;
+}
+
+svg {
+  display: inline-block;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  td {
+    border-top: 1px solid #ccc;
+  }
+}
+
+.Header {
+  img {
+    height: 50px;
+    margin-bottom: 5px;
+  }
+  img.costco {
+    float: right;
+  }
+  .CurrentNav {
+    background: #ccc;
+    height: 40px;
+    border-radius: 8px;
+  }
+}
+
+.lead {
+  text-align: center;
+  .InlineLogo {
+    display: inline-block;
+    vertical-align: middle;
+    height: 24px;
+  }
+  .InlineStar {
+    display: inline-block;
+    vertical-align: middle;
+    height: 18px;
+  }
+}
+
+.CancelBtn {
+  display: none;
+  text-align: center;
+  hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0 30px;
+  }
+  button {
+    background: $primary-bg-border;
+    border: none;
+    text-transform: uppercase;
+    color: $primary;
+    font-size: 1.025rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+  }
+}
+
+@media (min-width: 768px) {
+  .CancelBtn {
+    display: block;
+  }
+}
+
+.OabCustomize {
+  display: block;
+  background: $success;
+  border: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  outline: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.Master {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 340ms ease-out;
+  &.Expanded {
+    max-height: 3000px;
+  }
+}
